@@ -59,6 +59,8 @@ namespace PasswordGenerator
             // 
             // loginTextBox
             // 
+            this.loginTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.loginTextBox.Location = new System.Drawing.Point(353, 89);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(179, 22);
@@ -66,6 +68,9 @@ namespace PasswordGenerator
             // 
             // passwordTextBox
             // 
+            this.passwordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordTextBox.Location = new System.Drawing.Point(353, 155);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(179, 22);
@@ -73,6 +78,7 @@ namespace PasswordGenerator
             // 
             // logBtn
             // 
+            this.logBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.logBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.logBtn.Location = new System.Drawing.Point(105, 251);
@@ -81,9 +87,11 @@ namespace PasswordGenerator
             this.logBtn.TabIndex = 4;
             this.logBtn.Text = "Войти";
             this.logBtn.UseVisualStyleBackColor = true;
+            this.logBtn.Click += new System.EventHandler(this.logBtn_Click);
             // 
             // changeBtn
             // 
+            this.changeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.changeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.changeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.changeBtn.Location = new System.Drawing.Point(353, 251);
@@ -94,7 +102,7 @@ namespace PasswordGenerator
             this.changeBtn.UseVisualStyleBackColor = true;
             this.changeBtn.Click += new System.EventHandler(this.changeBtn_Click);
             // 
-            // PasswordGeneratorForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,9 +113,10 @@ namespace PasswordGenerator
             this.Controls.Add(this.loginTextBox);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelLogin);
-            this.Name = "PasswordGeneratorForm";
+            this.MinimumSize = new System.Drawing.Size(818, 398);
+            this.Name = "MainForm";
             this.ShowIcon = false;
-            this.Text = "Form1";
+            this.Text = "Main";
             this.ResumeLayout(false);
             this.PerformLayout();
 

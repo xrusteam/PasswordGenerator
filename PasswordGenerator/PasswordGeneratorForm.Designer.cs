@@ -40,13 +40,14 @@ namespace PasswordGenerator
             this.passTextBox = new System.Windows.Forms.TextBox();
             this.labelPass = new System.Windows.Forms.Label();
             this.generateBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelLength
             // 
             this.labelLength.AutoSize = true;
             this.labelLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelLength.Location = new System.Drawing.Point(412, 31);
+            this.labelLength.Location = new System.Drawing.Point(403, 32);
             this.labelLength.Name = "labelLength";
             this.labelLength.Size = new System.Drawing.Size(163, 26);
             this.labelLength.TabIndex = 0;
@@ -54,6 +55,8 @@ namespace PasswordGenerator
             // 
             // chkSpecial
             // 
+            this.chkSpecial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.chkSpecial.AutoSize = true;
             this.chkSpecial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chkSpecial.Location = new System.Drawing.Point(35, 78);
@@ -65,6 +68,8 @@ namespace PasswordGenerator
             // 
             // chkSim
             // 
+            this.chkSim.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.chkSim.AutoSize = true;
             this.chkSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chkSim.Location = new System.Drawing.Point(35, 124);
@@ -76,6 +81,8 @@ namespace PasswordGenerator
             // 
             // chkUpper
             // 
+            this.chkUpper.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.chkUpper.AutoSize = true;
             this.chkUpper.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chkUpper.Location = new System.Drawing.Point(35, 174);
@@ -87,6 +94,8 @@ namespace PasswordGenerator
             // 
             // chkLower
             // 
+            this.chkLower.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.chkLower.AutoSize = true;
             this.chkLower.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chkLower.Location = new System.Drawing.Point(35, 223);
@@ -98,6 +107,8 @@ namespace PasswordGenerator
             // 
             // chkNum
             // 
+            this.chkNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.chkNum.AutoSize = true;
             this.chkNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chkNum.Location = new System.Drawing.Point(35, 267);
@@ -109,6 +120,8 @@ namespace PasswordGenerator
             // 
             // labelOptions
             // 
+            this.labelOptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelOptions.AutoSize = true;
             this.labelOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelOptions.Location = new System.Drawing.Point(30, 27);
@@ -119,6 +132,8 @@ namespace PasswordGenerator
             // 
             // lengthTextBox
             // 
+            this.lengthTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lengthTextBox.Location = new System.Drawing.Point(617, 36);
             this.lengthTextBox.Name = "lengthTextBox";
             this.lengthTextBox.Size = new System.Drawing.Size(143, 22);
@@ -126,16 +141,20 @@ namespace PasswordGenerator
             // 
             // passTextBox
             // 
-            this.passTextBox.Location = new System.Drawing.Point(617, 179);
+            this.passTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.passTextBox.Location = new System.Drawing.Point(617, 184);
             this.passTextBox.Name = "passTextBox";
             this.passTextBox.Size = new System.Drawing.Size(143, 22);
             this.passTextBox.TabIndex = 8;
             // 
             // labelPass
             // 
+            this.labelPass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPass.AutoSize = true;
             this.labelPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPass.Location = new System.Drawing.Point(444, 174);
+            this.labelPass.Location = new System.Drawing.Point(403, 179);
             this.labelPass.Name = "labelPass";
             this.labelPass.Size = new System.Drawing.Size(131, 29);
             this.labelPass.TabIndex = 9;
@@ -143,6 +162,7 @@ namespace PasswordGenerator
             // 
             // generateBtn
             // 
+            this.generateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.generateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generateBtn.Location = new System.Drawing.Point(617, 267);
             this.generateBtn.Name = "generateBtn";
@@ -152,11 +172,23 @@ namespace PasswordGenerator
             this.generateBtn.UseVisualStyleBackColor = true;
             this.generateBtn.Click += new System.EventHandler(this.generateBtn_Click);
             // 
+            // saveBtn
+            // 
+            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveBtn.Location = new System.Drawing.Point(408, 267);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(143, 42);
+            this.saveBtn.TabIndex = 11;
+            this.saveBtn.Text = "Сохранить";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
             // PasswordGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 338);
+            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.generateBtn);
             this.Controls.Add(this.labelPass);
             this.Controls.Add(this.passTextBox);
@@ -170,6 +202,7 @@ namespace PasswordGenerator
             this.Controls.Add(this.labelLength);
             this.Name = "PasswordGeneratorForm";
             this.Text = "PasswordGeneratorForm";
+            this.Load += new System.EventHandler(this.PasswordGeneratorForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +221,6 @@ namespace PasswordGenerator
         private System.Windows.Forms.TextBox passTextBox;
         private System.Windows.Forms.Label labelPass;
         private System.Windows.Forms.Button generateBtn;
+        private System.Windows.Forms.Button saveBtn;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,7 @@ namespace PasswordGenerator
             this.logBtn.ForeColor = Color.FromArgb(224, 191, 230);
             this.changeBtn.BackColor = Color.FromArgb(102, 45, 145);
             this.changeBtn.ForeColor = Color.FromArgb(224, 191, 230);
+
         }
         
 
@@ -40,6 +42,11 @@ namespace PasswordGenerator
                 form.Show();
            } 
         }
-        
+
+        private void logBtn_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+
+        }
     }
 }

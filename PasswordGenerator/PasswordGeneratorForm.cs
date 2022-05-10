@@ -12,6 +12,7 @@ namespace PasswordGenerator
 {
     public partial class PasswordGeneratorForm : Form
     {
+        public static string ExampleText { get; private set; }
         public PasswordGeneratorForm()
         {
             InitializeComponent();
@@ -26,6 +27,8 @@ namespace PasswordGenerator
             this.labelPass.ForeColor = Color.FromArgb(102, 45, 145);
             this.generateBtn.BackColor = Color.FromArgb(102, 45, 145);
             this.generateBtn.ForeColor = Color.FromArgb(224, 191, 230);
+            this.saveBtn.BackColor = Color.FromArgb(102, 45, 145);
+            this.saveBtn.ForeColor = Color.FromArgb(224, 191, 230);
         }
         const string Lower_Case = "abcdefghijklmnopqrstuvwxyz";
         const string Upper_Case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -65,6 +68,18 @@ namespace PasswordGenerator
                 password[i] = charSet[rnd.Next(charSet.Length - 1)];
             }
             return string.Join(null, password);
+        }
+
+        private void PasswordGeneratorForm_Load(object sender, EventArgs e)
+        {
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            StartPosition = FormStartPosition.CenterParent;
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+             
+               
         }
     }
 }
