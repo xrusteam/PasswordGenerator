@@ -29,12 +29,14 @@ namespace PasswordGenerator
             this.generateBtn.ForeColor = Color.FromArgb(224, 191, 230);
             this.saveBtn.BackColor = Color.FromArgb(102, 45, 145);
             this.saveBtn.ForeColor = Color.FromArgb(224, 191, 230);
+            Dictionary<char, char> Same = new Dictionary<char, char>();
+
         }
         const string Lower_Case = "abcdefghijklmnopqrstuvwxyz";
         const string Upper_Case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         const string Numeric_Case = "1234567890";
         const string Special_Char = "!#$%&()*+-,./:;<>=?@[]^_{}|~№'";
-        const string Similar_Char = "b6c(gq9CGLlI1|Oo0S5VUZ2i";
+        string[] Similar_Char = new string[9] { "b6", "c(", "gq9", "CG", "LlI1|", "Oo0", "S5", "VU", "Z2i" };
 
         private void generateBtn_Click(object sender, EventArgs e)
         {
@@ -42,17 +44,28 @@ namespace PasswordGenerator
             {
                 passTextBox.Text = PasswordGen(chkLower.Checked, chkUpper.Checked, chkNum.Checked, chkSpecial.Checked, chkSim.Checked, int.Parse(lengthTextBox.Text));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        public string PasswordGen(bool lowerCase,bool upperCase,bool numericCase,bool specialChar,bool similarChar,int length )
+        string GenerateRAndompassword(string charSet,int length)
         {
-            char[] password = new char[length];
-            string charSet = "";
             Random rnd = new Random();
+            string password = "";
+            for (int i = 0; i < length; i++)
+            {
+                password += charSet[rnd.Next(charSet.Length - 1)];
+            }
+
+
+            return password;
+        }
+
+        public string PasswordGen(bool lowerCase, bool upperCase, bool numericCase, bool specialChar, bool similarChar, int length)
+        {
+            string charSet = "";
+            
             if (lowerCase)
                 charSet += Lower_Case;
             if (upperCase)
@@ -61,13 +74,37 @@ namespace PasswordGenerator
                 charSet += Numeric_Case;
             if (specialChar)
                 charSet += Special_Char;
+
+            string password = GenerateRAndompassword(charSet, length);
+
             if (similarChar)
-                charSet += Similar_Char;
-            for(int i = 0; i < length; i++)
             {
-                password[i] = charSet[rnd.Next(charSet.Length - 1)];
+                foreach(string same in Similar_Char)
+                {
+                    for(int i=0;i<same.Length;i++)
+                    {
+                        if (password.Contains(same[i].ToString()))
+                        {
+                            for(int j = i + 1; j < same.Length; j++)
+                            {
+                                password=password.Replace(same[j], same[i]);
+                            }
+                            break;
+                        }
+                    }
+                }
             }
-            return string.Join(null, password);
+
+            return  password;
+        }
+        private string Shipher(string shiph)
+        {
+            string newshiph = "";
+            foreach(char a in shiph)
+            {
+                newshiph +=(char)(a*3+20);
+            }
+            return newshiph;
         }
 
         private void PasswordGeneratorForm_Load(object sender, EventArgs e)
@@ -78,8 +115,9 @@ namespace PasswordGenerator
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-             
-               
+            string newpassword =Shipher(passTextBox.Text);
+
+
         }
     }
 }
