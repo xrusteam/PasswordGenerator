@@ -39,7 +39,7 @@ namespace PasswordGenerator
            {
                 form = new PasswordGeneratorForm();
                 form.Disposed += new EventHandler(f_Disposed);
-                form.Show();
+                form.ShowDialog();
            } 
         }
 
