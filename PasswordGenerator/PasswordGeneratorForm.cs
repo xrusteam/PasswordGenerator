@@ -57,6 +57,14 @@ namespace PasswordGenerator
             {
                 password += charSet[rnd.Next(charSet.Length - 1)];
             }
+        string GenerateRAndompassword(string charSet, int length)
+        {
+            Random rnd = new Random();
+            string password = "";
+            for (int i = 0; i < length; i++)
+            {
+                password += charSet[rnd.Next(charSet.Length - 1)];
+            }
 
 
             return password;
@@ -66,6 +74,7 @@ namespace PasswordGenerator
         {
             string charSet = "";
             
+
             if (lowerCase)
                 charSet += Lower_Case;
             if (upperCase)
@@ -103,8 +112,25 @@ namespace PasswordGenerator
             foreach(char a in shiph)
             {
                 newshiph +=(char)(a*3+20);
+            {
+                foreach (string same in Similar_Char)
+                {
+                    for (int i = 0; i < same.Length; i++)
+                    {
+                        if (password.Contains(same[i].ToString()))
+                        {
+                            for (int j = i + 1; j < same.Length; j++)
+                            {
+                                password = password.Replace(same[j], same[i]);
+                            }
+                            break;
+                        }
+                    }
+                }
             }
             return newshiph;
+
+            return password;
         }
 
         private void PasswordGeneratorForm_Load(object sender, EventArgs e)
@@ -118,7 +144,10 @@ namespace PasswordGenerator
             string newpassword =Shipher(passTextBox.Text);
 
 
+
+
         }
+
     }
 }
 
